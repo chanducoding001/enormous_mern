@@ -35,7 +35,7 @@ const Login = () => {
             return;
         }
 
-        console.log("✅ login successful");
+        console.log("login successful");
         // navigate("/login");
         const data = await response.json();
         const token = data?.data?.token;
