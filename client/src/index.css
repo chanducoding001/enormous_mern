@@ -1,0 +1,277 @@
+/* Reset Styles */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+    color: #333333;
+}
+
+::placeholder{
+    color: #333;
+}
+.container{
+    height: 100vh;
+    width: 100%;
+    /* background-color: yellow; */
+}
+.formContainer{
+    width:50%;
+    height:70vh;
+    /* flex-direction: column; */
+    /* background-color: blue; */
+   
+}
+/* form{
+    width: 100%;
+} */
+.makeCenter{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width:100%;
+}
+.inputContainer{
+    height:70px;
+    width: 100%;
+    /* background-color: green; */
+
+}
+.selectContainer{
+    background-color: green;
+}
+/* Button Styles */
+.btnStyles {
+    height: 45px;
+    border: 2px solid #0D6EFD; /* Professional Blue */
+    /* padding: 12px; */
+    /* padding: 10px 40px; */
+    width:100%;
+    margin: 10px 0px;
+    border-radius: 8px;
+    background-color: #0D6EFD;
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
+    text-align: center;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Hover Effect */
+.btnStyles:hover {
+    background-color: #ffffff;
+    color: #0D6EFD;
+    border-color: #0A58CA;
+    box-shadow: 0px 4px 12px rgba(13, 110, 253, 0.4);
+}
+
+/* Active Effect */
+.btnStyles:active {
+    transform: scale(0.97);
+    box-shadow: 0px 2px 8px rgba(13, 110, 253, 0.3);
+}
+
+/* Input Field Styles */
+.inputField {
+    /* width: clamp(100px,300px,500px); */
+    height:45px;
+    padding: 12px;
+    border: 2px solid #6C757D; /* Neutral Gray */
+    border-radius: 6px;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+    background-color: #F8F9FA; /* Light Background */
+    color: #333;
+    width: 100%;
+}
+.select{
+    padding:10px 12px;
+}
+
+/* Focus Effect */
+.inputField:focus {
+    border-color: #0D6EFD; /* Professional Blue */
+    box-shadow: 0 0 6px rgba(13, 110, 253, 0.3);
+    background-color: #ffffff;
+}
+
+/* Placeholder Styling */
+.inputField::placeholder {
+    color: #6C757D;
+    font-size: 14px;
+}
+
+
+.errorMsg{
+    font-size: 14px;
+    color: red;
+    /* color: darkslateblue; */
+    /* color: #f36e23; */
+}
+
+
+.title {
+    margin: 10px 0;
+    font-size: 24px; /* Default size */
+    font-weight: 700; /* Bold and professional */
+    text-align: center; /* Centered for a balanced look */
+    color: #222; /* Dark, readable color */
+}
+
+.wrapper{
+    height: 100vh;
+}
+.card1 {
+    width: 70%;
+    height: 40%;
+    /* background: linear-gradient(135deg, #1e1e1e, #2a2a2a);  */
+    /* background: linear-gradient(135deg, #1e1e1e, #2a2a2a);  */
+    background: linear-gradient(135deg, #FF6B6B, #FF8E8E, #FF4D4D);
+    color: #ffffff; /* White text for contrast */
+    border-radius: 10px;
+    box-shadow: 4px 4px 15px rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    text-align: center;
+    font-size: clamp(5,15,18);
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+}
+
+.card1:hover {
+    box-shadow: 6px 6px 20px rgba(255, 255, 255, 0.15);
+    transform: translateY(-5px);
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .formContainer{
+        width:100%;
+    }
+    .title {
+        font-size: 20px; /* Slightly smaller for tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 18px; /* Even smaller for mobile */
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .inputField {
+        padding: 10px;
+        font-size: 14px;
+    }
+    .btnStyles {
+        padding: 10px 30px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .inputField {
+        padding: 8px;
+        font-size: 12px;
+    }
+    .btnStyles {
+        padding: 8px 20px;
+        font-size: 12px;
+    }
+}
+
+
+
+
+
+/* *{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.btnStyles {
+    border: 2px solid #007BFF;
+    padding: 10px 40px;
+    margin: 10px;
+    border-radius: 8px;
+    background-color: #007BFF;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight:500;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
+    text-align: center;
+}
+
+.btnStyles:hover {
+    background-color: white;
+    color: #007BFF;
+    box-shadow: 0px 4px 10px rgba(138, 43, 226, 0.5);
+}
+
+.btnStyles:active {
+    transform: scale(0.98);
+}
+
+.inputField {
+    width: 100%; 
+    padding: 10px;
+    border: 1.4px solid #f36e23;
+    border-radius: 6px;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.inputField:focus {
+    border-color: #d35400; 
+    box-shadow: 0 0 5px rgba(243, 110, 35, 0.5);
+}
+
+.inputField::placeholder {
+    color: #aaa;
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    .inputField {
+        padding: 8px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .inputField {
+        padding: 6px;
+        font-size: 12px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .btnStyles {
+        padding: 10px 30px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .btnStyles {
+        padding: 8px 20px;
+        font-size: 12px;
+    }
+}
+ */

@@ -1,0 +1,170 @@
+.todoContainer{
+    /* background-color: greenyellow; */
+    width:85%;
+    /* height: 1; */
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center;
+    justify-content: center; */
+}
+
+.todoTitle {
+    font-size: clamp(1.5rem, 2.5vw, 3rem); /* Adjusts dynamically based on screen width */
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+    margin: clamp(10px, 0.5vw, 20px) 0;
+}
+
+
+.todoInputContainer{
+    display: flex;
+    justify-content: space-between;
+}
+.todoInputField {
+    width: min(100%, 75%); 
+    padding: clamp(6px, 2vw, 12px); 
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease-in-out;
+}
+
+/* Focus Effect */
+.todoInputField:focus {
+    border-color: #007bff;
+}
+
+.addTodoBtn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(6px, 2vw, 12px) clamp(10px, 3vw, 20px);
+    font-size: clamp(0.8rem, 2vw, 1.2rem);
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    /* width: min(200px, 50%); */
+    width: min(100%, 22%);
+}
+
+/* Hover effect */
+.addTodoBtn:hover {
+    background-color: #0056b3;
+}
+
+.todosListContainer{
+    /* background-color: yellow; */
+    margin: 10px 0px;
+}
+.descriptContainer{
+    /* background-color: #d9363e; */
+    /* margin: 5px 0px; */
+    display: flex;
+    /* justify-content: center; */
+    margin: 5px 0px;
+    /* margin: auto; */
+    /* flex-direction: column; */
+}
+.eachTodoContainer{
+    width: 100%;
+    /* margin: auto; */
+    /* background-color: yellow; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* margin:5px; */
+    /* margin: 0 auto; */
+}
+/* .editInput{
+    margin: auto;
+    background-color: #D9363E;
+} */
+.todoDescription{
+    text-align: center;
+}
+.editDeleteBtnsContainer {
+    width: min(100%, 35%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap; /* Prevents wrapping */
+    gap: clamp(5px, 2vw, 15px); /* Ensures proper spacing */
+    padding: clamp(5px, 1.5vw, 10px);
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+    margin: 5px auto;
+}
+
+.editDeleteBtn {
+    display: flex; /* Ensures proper alignment */
+    align-items: center;
+    justify-content: center;
+    padding: clamp(6px, 0.5vw, 8px);
+    font-size: clamp(0.8rem, 2vw, 1rem);
+    border: none;
+    border-radius: 5px;
+    /* background-color: #007bff; */
+    /* background-color: #28a745; */
+    background-color: #FF6B6B;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    flex: 1; /* Makes buttons flexible and evenly distributed */
+    max-width: 150px; /* Ensures they don’t get too big */
+    min-width: 80px; /* Prevents them from becoming too small */
+    text-align: center;
+}
+
+/* Hover effect */
+.editDeleteBtn:hover {
+    /* background-color: #d9363e; */
+    /* background-color: #1e7e34; */
+    background-color: #D9363E;
+}
+
+/* .editDeleteBtnsContainer{
+    width:25%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+} */
+
+/* .editDeleteBtnsContainer {
+    width: min(100%, 65%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; 
+    gap: clamp(5px, 2vw, 15px); 
+    padding: clamp(5px, 1.5vw, 10px); 
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+}
+
+.editDeleteBtn {
+    align-items: center;
+    justify-content: center;
+    padding: clamp(6px, 0.5vw, 8px);
+    font-size: clamp(0.8rem, 2vw, 1rem);
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    width: min(100px, 50%); 
+}
+
+
+.editDeleteBtn:hover {
+    background-color: #d9363e;
+} */
