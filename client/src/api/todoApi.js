@@ -7,14 +7,22 @@ const apiRequest = async (method, url, payload = null, rejectWithValue) => {
         const response = await baseUrlInstance[method](url, payload);
         
         if (response.status !== 200) {
-            return rejectWithValue(`Error while performing request: ${url}`);
+            // return rejectWithValue(`Error while performing request: ${url}`);
+            return rejectWithValue({
+                status: response.status,
+                message: `Error while performing request: ${url}`
+            });
         }
         const data = response?.data?.data;
         console.log('api data',data);
         
         return data;
     } catch (error) {
-        return rejectWithValue(error.message);
+        // return rejectWithValue(error.message);
+        return rejectWithValue({
+            status: error.response?.status || 500,
+            message: error.message
+        });
     }
 };
 
@@ -26,6 +34,8 @@ const createThunk = (type, method, url, requiresPayload = true) => {
 };
 
 // Define API thunks
+export const registerThunkApi = createThunk("register", "post", import.meta.env.VITE_REGISTER_URL);
+export const loginThunkApi = createThunk("login", "post", import.meta.env.VITE_LOGIN_URL);
 export const addTodoThunkApi = createThunk("add todo", "post", import.meta.env.VITE_ADD_TODO_URL);
 export const editTodoThunkApi = createThunk("edit todo", "post", import.meta.env.VITE_EDIT_TODO_URL);
 export const deleteTodoThunkApi = createThunk("delete todo", "post", import.meta.env.VITE_DELETE_TODO_URL);

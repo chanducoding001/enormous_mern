@@ -81,3 +81,35 @@ export const loginFormData = [
     data:[],
     error:null
   };
+
+export const handleApiRequest = async (dispatch, thunk, values, setModalState,navigate,navigateUrl) => {
+    const result = await dispatch(thunk(values));
+
+    if (result.meta.requestStatus === loadingStates.PENDING) {
+      setModalState(prev => ({
+        ...prev,
+        open: true,
+        title: 'Registering User',
+        message: 'Registration is pending!',
+      }));
+    } else if (result.meta.requestStatus === loadingStates.FULFILLED) {
+      setModalState(prev => ({
+        ...prev,
+        open: true,
+        title: 'Success',
+        message: 'Registration successful!',
+      }));
+      navigate(navigateUrl);
+    } else if (result.meta.requestStatus === loadingStates.REJECTED) {
+      const statusCode = result.payload?.status || 500; // Default to 500 if undefined
+      // const errorMessage = registerError?.message || 'Cannot register user';
+      const errorMessage = result.payload?.message || 'Cannot register user';
+      
+      setModalState(prev => ({
+        ...prev,
+        open: true,
+        title: `Error ${statusCode}`,
+        message: errorMessage,
+      }));
+    }
+  };

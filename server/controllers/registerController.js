@@ -5,12 +5,12 @@ const registerController = async (req,res)=>{
     const {email,password,name,role} = req.body;
     console.log('body',req.body);
     if(!email || !password || !name || !role){
-        return res.status(401).json({message:'All fields are required!'})
+        return res.status(400).json({message:'All fields are required!'})
     }
     try{
         const user = await Users.findOne({email});
         //console.log("user",user);
-    if(user) return res.status(402).json({message:'user already exists with this email'});
+    if(user) return res.status(409).json({message:'user already exists with this email'});
     const hashed = bcrypt.hashSync(password,10);
     const newUser = await Users.create({...req.body,password:hashed});
     if(newUser){

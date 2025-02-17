@@ -83,7 +83,9 @@ const VisitWork = () => {
         </div>
       )}
       <div className='todosListContainer'>
-        {todos?.map((todo) => (
+        {
+        // todos?.map((todo) => (
+        todos?.slice().reverse()?.map((todo) => (
           <div key={todo._id} className='descriptContainer'>
             {(editTodo?._id === todo._id && role===roles.ADMIN) ? (
               <div className='eachTodoContainer'>
@@ -113,7 +115,8 @@ const VisitWork = () => {
             )}
             {/* {role === roles.ADMIN && <button className='editDeleteBtn' onClick={() => handleDeleteTodo(todo._id)}>Delete</button>} */}
           </div>
-        ))}
+        ))
+        }
       </div>
     </div>
   );

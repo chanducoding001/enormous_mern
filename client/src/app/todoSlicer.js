@@ -1,9 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { dataStates, loadingStates } from "../auth/authUtils";
-import { addTodoThunkApi, deleteTodoThunkApi, editTodoThunkApi, getTodosThunkApi } from "../api/todoApi";
+import { addTodoThunkApi, deleteTodoThunkApi, editTodoThunkApi, getTodosThunkApi, loginThunkApi, registerThunkApi } from "../api/todoApi";
 
 const initialState = {
     todos:[],
+    registerData:dataStates,
+    loginData:dataStates,
     addTodoData:dataStates,
     editTodoData:dataStates,
     deleteTodoData:dataStates,
@@ -44,6 +46,8 @@ const todoSlicer = createSlice({
         }
     },
     extraReducers: (builder) => {
+        handleApiCases(builder,registerThunkApi,'registerData');
+        handleApiCases(builder,loginThunkApi,'loginData');
         handleApiCases(builder,addTodoThunkApi,'addTodoData');
         handleApiCases(builder,editTodoThunkApi,'editTodoData');
         handleApiCases(builder,deleteTodoThunkApi,'deleteTodoData');
@@ -57,3 +61,5 @@ export default todoSlicer.reducer;
 
 export const todosState = (state)=>state.todoSlicer.todos;
 export const getAllTodoDataState = (state)=>state.todoSlicer.getAllTodoData;
+export const registerDataState = (state)=>state.todoSlicer.registerData;
+export const loginDataState = (state)=>state.todoSlicer.loginData;

@@ -1,12 +1,13 @@
 import { Form, Formik } from 'formik';
 import React from 'react'
-import ReusableInput from '../reusables/ReusableInput';
 import SubmitBtn from '../reusables/SubmitBtn';
 import AllFields from '../reusables/AllFields';
+import ReuseModal from '../reusables/ReuseModal';
 
 const useFormHook = (formProps) => {
-    const {initialValues,onSubmit,validationSchema,formData,title} = formProps;
+    const {initialValues,onSubmit,validationSchema,formData,title,modalProps} = formProps;
   return (
+    <>
     <div className='formContainer makeCenter'>
     <h1 className='title'>{title}</h1>
       <Formik initialValues={initialValues} onSubmit={onSubmit} validationSchema={validationSchema}>
@@ -31,6 +32,13 @@ const useFormHook = (formProps) => {
             </Form>
       </Formik>
     </div>
+    <ReuseModal 
+          open={modalProps?.open}
+          handleClose={modalProps?.handleClose}
+          modalTitle={modalProps.title}
+          modalBody={modalProps.body}
+          />
+    </>
   )
 }
 
